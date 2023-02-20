@@ -58,6 +58,21 @@ $ git init
 - repository created
 
 - now need to "turn on"
-- in terminal (gitbash):
     git add .
+    
     git commit -am '[message what changed]'
+    
+    (set up repository on github)
+    (use commands on github for pushing existing repository; listed below)
+    
+    git remote add origin https://github.com/davki54321/flask_codemy.git
+    
+    git branch -M main
+    (changes name "master" to "main")
+    
+    git push -u origin main
+
+- changes to github
+    git add .
+    git commit -am '[message]'
+    git push
