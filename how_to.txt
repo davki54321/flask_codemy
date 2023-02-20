@@ -23,11 +23,8 @@
 - create SSH key (gitbash)
 - in terminal:
     cd ~/
-
     pwd (shows current directory)
-
     mkdir .ssh (. makes hidden folder)
-
     ssh-keygen.exe
     enter (for first question to save in current directory)
     enter (for no password)
@@ -42,7 +39,7 @@
     in gitignore folder:
     .gitignore
 
-    /[name of virtual environment]
+    [name of virtual environment folder]/
 
 -- setting up version control (gitbash) (from codemy.com):
 
