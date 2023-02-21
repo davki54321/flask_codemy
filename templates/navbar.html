@@ -1,22 +1,62 @@
 
 <nav class="navbar navbar-expand-lg nav-bg">  
   <div class="container-fluid navbar-gen">
-    <a class="navbar-brand" href="#"><img src="\static\home-icon.svg" alt="home icon" width="32"></a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+
+    <!-- home icon linked to homepage -->
+    <!-- 'index' in url_for is route from app.py (under @app.route('/')) -->
+    <a 
+      class="navbar-brand" 
+      href="{{ url_for('index') }}">
+      <img 
+        class="d-inline-block align-top" 
+        src="\static\home-icon.svg" 
+        alt="home icon" 
+        width="32">
+    </a>
+    
+    <!-- hamburger menu for collapse navbar -->
+    <button 
+      class="navbar-toggler" 
+      type="button" 
+      data-bs-toggle="collapse" 
+      data-bs-target="#navbarSupportedContent" 
+      aria-controls="navbarSupportedContent" 
+      aria-expanded="false" 
+      aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <!-- link to user profile page -->
         <li class="nav-item">
-          <a class="nav-link nav-text" aria-current="page" href="#">Link1</a>
+          <a 
+            class="nav-link nav-text" 
+            aria-current="page" 
+            href="{{ url_for('user', name='Namey McNameface') }}">
+            User Profile
+          </a>
         </li>
+        <!-- link to name form page -->
         <li class="nav-item">
-          <a class="nav-link nav-text" href="#">Link2</a>
+          <a 
+            class="nav-link nav-text" 
+            href="{{ url_for('name_form') }}">
+            Name Form
+          </a>
         </li>
       </ul>
       <form class="d-flex" role="search">
-        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-        <button class="btn btn-outline-success" id="nav-search" type="submit">Search</button>
+        <input 
+          class="form-control me-2" 
+          type="search" 
+          placeholder="Search" 
+          aria-label="Search">
+        <button 
+          class="btn btn-outline-success" 
+          id="nav-search" 
+          type="submit">
+          Search
+        </button>
       </form>
     </div>
   </div>

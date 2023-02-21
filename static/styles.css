@@ -1,14 +1,18 @@
+/* removes underline from navbar links */
 .navbar-gen a {
     text-decoration: none;
 }
 
+/* navbar background color */
 .nav-bg {
     background-color: #A342AE;
 }
 
+/* navbar search bar colors */
 #nav-search {
-    background-color: #C9E4E0;
-    color: #135B51;
+    background-color: #A342AE;
+    border: 1px solid #ffffff;
+    color: #ffffff;
 }
 
 #nav-search:hover {
@@ -17,10 +21,13 @@
     border: 1px solid #06473E;
 }
 
+/* color for text in navbar */
 .nav-text {
     color: white;
+    font-size: 1em;
 }
 
 .nav-text:hover {
     color: #A4E8F6;
+    /* text-decoration: underline; */
 }
