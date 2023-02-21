@@ -1,7 +1,26 @@
+.navbar-gen a {
+    text-decoration: none;
+}
+
 .nav-bg {
     background-color: #A342AE;
 }
 
+#nav-search {
+    background-color: #C9E4E0;
+    color: #135B51;
+}
+
+#nav-search:hover {
+    background-color: #7FE2D5;
+    color: #06473E;
+    border: 1px solid #06473E;
+}
+
 .nav-text {
     color: white;
+}
+
+.nav-text:hover {
+    color: #A4E8F6;
 }
