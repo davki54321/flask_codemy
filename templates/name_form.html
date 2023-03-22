@@ -2,26 +2,45 @@
 
 {% block content %}
 
+<!-- message from line 58 app.py -->
+{% for message in get_flashed_messages() %}
+    <div class="alert alert-primary alert-dismissible fade show" role="alert">
+        {{ message }}
+        <button 
+            type="button" 
+            class="btn-close" 
+            data-bs-dismiss="alert" 
+            aria-label="Close"></button>
+    </div>
+
+{% endfor %}
+
+
     {% if name %}
         <h1>Hello {{ name }}!</h1>
+        <br>
+        <img src="{{ url_for('static', filename='images/plum.png') }}" alt="giant plum" height="147" width="150">
+
     {% else %}
         <h1>Who are you?</h1>
         <br>
         <form action="" method="POST">
-            <!-- form object from name_form() in app.py -->
+            <!-- "form" object line 62 in  app.py -->
+            <!-- creates CSRF token -->
             {{ form.hidden_tag() }}
 
-            <!-- Label is "What's Your Name" from object StringField -->
+            <!-- Label is "What's Your Name" from object StringField, line 10 in app.py -->
             <!-- class "form-label" is from bootstrap -->
             {{ form.name.label(class="form-label") }}
 
             <!-- Creates input field or StringField-->
+            <!-- form.name is from line 10 in app.py -->
             <!-- class "form-control" is from bootstrap -->
             {{ form.name(class="form-control") }}
             <br>
             <!-- Creates submit button -->
+            <!-- form.submit is from line 11 in app.py -->
             {{ form.submit(class="btn btn-secondary") }}
-
 
         </form>
 
