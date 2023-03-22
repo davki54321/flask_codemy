@@ -27,19 +27,23 @@ def index():
 
 
 #localhost:5000/users/david
-# <var> must be the same as var name entered into function
+# <var> must be the same as var name entered into function, in this name <name> (line 31) and def user(name) (line 32)
 @app.route('/users/<name>')
 def user(name):
     return render_template("user.html", name=name)
 
 # Invalid URL
 @app.errorhandler(404)
+# variable "e" is for error
 def page_not_found(e):
+    # 404 at end of line 40 will get pass to "page_not_found(e)"
     return render_template("404.html"), 404
 
 # Internal Server Errror
 @app.errorhandler(500)
+# variable "e" is for error
 def page_not_found(e):
+    # 500 at end of line 40 will get pass to "page_not_found(e)"
     return render_template("500.html"), 500
 
 # Name form
