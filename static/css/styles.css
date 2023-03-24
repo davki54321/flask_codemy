@@ -1,14 +1,79 @@
-
-body {
-    background-color: #f4f4f4;
+/* .alert for flash messages */
+.alert.success {
+    background-color: #C8FFC1;
+    border: 2px solid #31CA21;
+}
+  
+.alert.error {
+    background-color: red;
 }
 
+body {
+    background-color: #EEEEEE;
+}
+
+/* for input borders on register and login pages */
+.border1 {
+    border: 2px solid #D4D4D4;
+}
+
+/* for "search" in navbar,
+"Create Account" on register
+"Login" on login */
+.btn1 {
+    background-color: #A342AE;
+    border: 1px solid #ffffff;
+    color: #ffffff;
+}
+
+.btn1:hover {
+    background-color: #FBCAFF;
+    color: #7D008B;
+    border: 1px solid #7D008B;
+}
+
+/* dont know where this element is ???
 center p {
     font-family: 'Courier New', Courier, monospace;
     font-size: 1.7em;
     font-weight: bold;
     padding-top: 0.5em;
+} */
+
+/* for div on register and login after form */
+.div1 {
+    margin: auto;
+    width: 60%;
+    min-width: 200px;
+    max-width: 800px;
 }
+
+/* for h1 on register.html */
+div[class="form-container"] h1 {
+    font-size: 1.8em;
+    text-decoration: underline;
+}
+
+.form-container {
+    background-color: #FFFFF0;
+    border: 4px #DD92E5 groove;
+    border-radius: 10px;
+    margin: auto;
+    padding: 30px;
+    width: 60%;
+    min-width: 200px;
+    max-width: 800px;
+}
+
+.form-reg {
+    width: 70%;
+    margin: auto;
+}
+
+/* for "search" placeholder */
+input:placeholder-shown {
+    font-style: italic;
+ }
 
 /* removes underline from navbar links */
 .navbar-gen a {
@@ -18,19 +83,6 @@ center p {
 /* navbar background color */
 .nav-bg {
     background-color: #A342AE;
-}
-
-/* navbar search bar colors */
-#nav-search {
-    background-color: #A342AE;
-    border: 1px solid #ffffff;
-    color: #ffffff;
-}
-
-#nav-search:hover {
-    background-color: #7FE2D5;
-    color: #06473E;
-    border: 1px solid #06473E;
 }
 
 /* color for text in navbar */

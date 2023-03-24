@@ -1,0 +1,150 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<!-- message from line 58 app.py
+{% for message in get_flashed_messages() %}
+    <div class="alert alert-primary alert-dismissible fade show" role="alert">
+        {{ message }}
+        <button 
+            type="button" 
+            class="btn-close" 
+            data-bs-dismiss="alert" 
+            aria-label="Close"></button>
+    </div>
+
+{% endfor %} -->
+
+<!-- 
+    {% if name %}
+        <h1>Hello {{ name }}!</h1>
+        <br>
+        <img src="{{ url_for('static', filename='images/plum.png') }}" alt="giant plum" height="147" width="150">
+
+    {% else %} -->
+        <div class="form-container">
+            <h1 class="text-center">Registration</h1>
+            <br>
+            <form class="form-reg" action="" method="POST">
+                <!-- "form" object from funct "registration" in app.py -->
+                <!-- creates CSRF token -->
+                {{ form.hidden_tag() }}
+
+                <!-- "name" label and input fields -->
+                <div class="row mb-3">
+                    <!-- Label "Name:" from object "form" in function "registration", from class "NameForm" in app.py -->
+                    <!-- class "form-label" is from bootstrap -->
+                    {{ form.name.label(class="col-sm-2 col-form-label") }}
+
+                    <!-- this div sets input field next to label instead of under label -->
+                    <div class="col-sm-9 ms-auto">
+                        <!-- checks for errors from validation checks -->
+                        {% if form.name.errors %}
+                            {{ form.name(class="form-control is-invalid") }}
+                            <div class="invalid-feedback">
+                                {% for error in form.name.errors %}
+                                <span>{{ error }}</span>
+                                {% endfor %}
+                            </div>
+                        {% else %}
+                            <!-- Creates input field or StringField-->
+                            <!-- class "form-control" is from bootstrap -->
+                            {{ form.name(class="form-control border1") }}
+                        {% endif %}
+
+                        <!-- Creates input field or StringField-->
+                        <!-- class "form-control" is from bootstrap -->
+                        <!-- {{ form.name(class="form-control") }} -->
+
+                    </div>
+                </div>
+
+                <!-- "email" label and input fields -->
+                <div class="row mb-3">
+                    {{ form.email.label(class="col-sm-2 col-form-label") }}
+                    <!-- <div class="col-sm-9 ms-auto">
+                        {{ form.email(class="form-control") }}
+                    </div> -->
+
+                    <!-- this div sets input field next to label instead of under label -->
+                    <div class="col-sm-9 ms-auto">
+                        <!-- checks for errors from validation checks -->
+                        {% if form.email.errors %}
+                            {{ form.email(class="form-control is-invalid") }}
+                                <div class="invalid-feedback">
+                                    {% for error in form.email.errors %}
+                                    <span>{{ error }}</span>
+                                    {% endfor %}
+                                </div>
+                        {% else %}
+                            <!-- Creates input field or StringField-->
+                            <!-- class "form-control" is from bootstrap -->
+                            {{ form.email(class="form-control border1") }}
+                        {% endif %}
+                    </div>
+                </div>
+                
+                <!-- "password" label and input fields -->
+                <div class="row mb-3">
+                    {{ form.password.label(class="col-sm-2 col-form-label") }}
+                    
+                    <!-- this div sets input field next to label instead of under label -->
+                    <div class="col-sm-9 ms-auto">
+                        <!-- {{ form.password(class="form-control") }} -->
+
+                        <!-- checks for errors from validation checks -->
+                        {% if form.password.errors %}
+                            {{ form.password(class="form-control is-invalid") }}
+                                <div class="invalid-feedback">
+                                    {% for error in form.password.errors %}
+                                    <span>{{ error }}</span>
+                                    {% endfor %}
+                                </div>
+                        {% else %}
+                            <!-- Creates input field or StringField-->
+                            <!-- class "form-control" is from bootstrap -->
+                            {{ form.password(class="form-control border1") }}
+                        {% endif %}                        
+                    </div>
+                </div>
+
+                <!-- "confirm password" label and inputs fields -->
+                <div class="row">
+                    {{ form.confirm_pw.label(class="col-sm-2 col-form-label") }}
+                    
+                    <!-- this div sets input field next to label instead of under label -->
+                    <div class="col-sm-9 ms-auto">
+                        <!-- {{ form.confirm_pw(class="form-control") }} -->
+
+                        <!-- checks for errors from validation checks -->
+                        {% if form.confirm_pw.errors %}
+                            {{ form.confirm_pw(class="form-control is-invalid") }}
+                                <div class="invalid-feedback">
+                                    {% for error in form.confirm_pw.errors %}
+                                    <span>{{ error }}</span>
+                                    {% endfor %}
+                                </div>
+                        {% else %}
+                            <!-- Creates input field or StringField-->
+                            <!-- class "form-control" is from bootstrap -->
+                            {{ form.confirm_pw(class="form-control border1") }}
+                        {% endif %}                          
+                    </div>
+                </div>
+
+                <!-- Creates submit button -->
+                <div class="text-center mt-2 mb-2">
+                    {{ form.submit(class="btn btn-secondary btn1") }}
+                </div>
+            </form>
+            
+        </div>
+        <div class="text-end mt-2 div1">
+            <small class="text-muted me-3">
+                <i>Already have an account?</i>&nbsp <a class="fs-6" href="{{ url_for('login') }}">Sign In</a>
+            </small>
+        </div>
+
+    <!-- {% endif %} -->
+
+{% endblock %}
